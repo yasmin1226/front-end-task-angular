@@ -1,0 +1,137 @@
+<ng-container>
+  <div class="type">
+    <div
+      (click)="isTypeOpen = !isTypeOpen"
+      class="d-flex justify-content-between"
+    >
+      <p>product type</p>
+      <p><i class="fas fa-chevron-up"></i></p>
+    </div>
+
+    <div class="notOpen" [ngClass]="{ open: isTypeOpen }">
+      <div class="form-check">
+        <div *ngFor="let type of types">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [value]="type?.id"
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            {{ type?.name }} <span>(411)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="price">
+    <div class="d-flex justify-content-between">
+      <p>price</p>
+      <p><i class="fas fa-chevron-up"></i></p>
+    </div>
+    <div class="d-flex justify-content-around">
+      <div class="div-price">0 usd</div>
+      <div class="div-price">500 usd</div>
+    </div>
+    <div class="d-flex rate">
+      <div class="circle"></div>
+      <div class="bar"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
+  <div class="collection">
+    <div class="d-flex justify-content-between">
+      <p>collection</p>
+      <p><i class="fas fa-chevron-down"></i></p>
+    </div>
+  </div>
+  <div class="size">
+    <div class="d-flex justify-content-between">
+      <p>size</p>
+      <p (click)="isOpened = !isOpened"><i class="fas fa-chevron-up"></i></p>
+    </div>
+    <div>
+      <div
+        class="btn-group notOpen"
+        [ngClass]="{ open: isOpened }"
+        role="group"
+        aria-label="Basic radio toggle button group"
+      >
+        <input
+          type="checkbox"
+          class="btn-check"
+          name="btnradio"
+          id="btnradio1"
+          autocomplete="off"
+          checked
+        />
+        <label class="btn btn-outline-primary" for="btnradio1">l</label>
+
+        <input
+          type="checkbox"
+          class="btn-check"
+          name="btnradio"
+          id="btnradio2"
+          autocomplete="off"
+        />
+        <label class="btn btn-outline-primary" for="btnradio2">xs</label>
+
+        <input
+          type="checkbox"
+          class="btn-check"
+          name="btnradio"
+          id="btnradio3"
+          autocomplete="off"
+        />
+        <label class="btn btn-outline-primary" for="btnradio3">xl</label>
+        <input
+          type="checkbox"
+          class="btn-check"
+          name="btnradio"
+          id="btnradio3"
+          autocomplete="off"
+        />
+        <label class="btn btn-outline-primary" for="btnradio3">xxl</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="color">
+    <div
+      class="d-flex justify-content-between"
+      (click)="isColorOpened = !isColorOpened"
+    >
+      <p>color</p>
+      <p><i class="fas fa-chevron-up"></i></p>
+    </div>
+
+    <div class="btn-group notOpen" [ngClass]="{ open: isColorOpened }">
+      <input
+        type="checkbox"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio3"
+        autocomplete="off"
+      />
+      <label class="btn btn-outline-primary bg-color1" for="btnradio3"></label>
+
+      <input
+        type="checkbox"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio3"
+        autocomplete="off"
+      />
+      <label class="btn btn-outline-primary bg-color2" for="btnradio3"></label>
+      <input
+        type="checkbox"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio3"
+        autocomplete="off"
+      />
+      <label class="btn btn-outline-primary bg-color3" for="btnradio3"></label>
+    </div>
+  </div>
+</ng-container>

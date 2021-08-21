@@ -1,0 +1,79 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Photo1 Camera",
+      "description": "description",
+
+      "price": 900,
+      "discount": 20,
+
+      "colors": ["red", "blue"],
+      "sizes": [36, 42],
+      "imageUrls": ["1.jpg"],
+      "typeId": 1
+    },
+    {
+      "id": 1,
+      "name": "Photo1 Camera",
+      "description": "description",
+
+      "price": 900,
+      "discount": 20,
+
+      "colors": ["red", "blue"],
+      "sizes": [36, 42],
+      "imageUrls": ["1.jpg"],
+      "typeId": 1
+    },
+    {
+      "id": 1,
+      "name": "Photo1 Camera",
+      "description": "description",
+
+      "price": 900,
+      "discount": 20,
+
+      "colors": ["red", "blue"],
+      "sizes": [36, 42],
+      "imageUrls": ["1.jpg"],
+      "typeId": 1
+    },
+    {
+      "id": 2,
+      "name": "Photo1 Camera",
+      "description": "description",
+
+      "price": 900,
+      "discount": 20,
+
+      "colors": ["red", "blue"],
+      "sizes": [36, 42],
+      "imageUrls": ["1.jpg"],
+      "typeId": 1
+    },
+    {
+      "id": 3,
+      "name": "TShirt summer fibers",
+      "description": "description",
+
+      "price": 900,
+
+      "colors": ["red", "blue"],
+      "sizes": [36, 42],
+      "imageUrls": ["1.jpg"],
+      "typeId": 1
+    }
+  ],
+  "types": [
+    { "id": 1, "name": "T-Shirt" },
+    { "id": 2, "name": "SweetShirt" },
+    { "id": 3, "name": "T-SweetPants" },
+    { "id": 4, "name": "T-Shirt2" }
+  ],
+  "catogries": [
+    { "id": 1, "name": "men" },
+    { "id": 2, "name": "women" },
+    { "id": 3, "name": "children" }
+  ]
+}
