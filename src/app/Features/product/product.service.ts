@@ -16,6 +16,7 @@ export class ProductService {
       tap((products) => {
         console.log('prs', products);
         this.products = products;
+        this.filteredProducts = products;
         return products;
       })
     );

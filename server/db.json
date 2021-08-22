@@ -10,7 +10,7 @@
       "colors": ["red", "blue"],
       "sizes": [36, 42],
       "imageUrls": ["1.jpg"],
-      "typeId": 1
+      "type": { "id": 1 }
     },
     {
       "id": 2,
@@ -23,7 +23,7 @@
       "colors": ["red", "blue"],
       "sizes": [36, 42],
       "imageUrls": ["1.jpg"],
-      "typeId": 1
+      "type": { "id": 2 }
     },
     {
       "id": 3,
@@ -36,7 +36,7 @@
       "colors": ["red", "blue"],
       "sizes": [36, 42],
       "imageUrls": ["1.jpg"],
-      "typeId": 1
+      "type": { "id": 3 }
     },
     {
       "id": 4,
@@ -47,7 +47,7 @@
       "colors": ["red", "blue"],
       "sizes": [36, 42],
       "imageUrls": ["1.jpg"],
-      "typeId": 1
+      "type": { "id": 1 }
     },
     {
       "id": 5,
@@ -59,7 +59,7 @@
       "colors": ["red", "blue"],
       "sizes": [36, 42],
       "imageUrls": ["1.jpg"],
-      "typeId": 1
+      "type": { "id": 2 }
     }
   ],
   "types": [
