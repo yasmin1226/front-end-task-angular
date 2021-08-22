@@ -4,6 +4,7 @@ import { TypesService } from './../../types/types.service';
 import { SizeService } from './../../size/size.service';
 import { Size } from 'src/app/_Models/size';
 import { ProductService } from './../product.service';
+import { Product } from './../../../_Models/product';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -39,15 +40,24 @@ export class FilterComponent implements OnInit {
   isOpened = false;
   isColorOpened = true;
   filterProducts() {
-    this.productService.filteredProducts = [];
-    this.selectedTypes.map((t) => {
-      this.productService.products.map((p) => {
-        if (t.id == p.type?.id) {
-          this.productService.filteredProducts.push(p);
-          console.log('exist p id', p.id);
-        }
+    if (this.selectedTypes.length > 0) {
+      let filteredProducts = this.productService.products;
+      let newProducts: Product[] = [];
+      this.selectedTypes.map((t) => {
+        console.log('all prods', filteredProducts);
+        console.log('triggered');
+        console.log(this.selectedTypes);
+        filteredProducts.forEach((prod) => {
+          if (prod.type?.id == t.id) {
+            newProducts.push(prod);
+          }
+        });
       });
-    });
+      this.productService.modifyFilteredProducts(newProducts);
+      // this.productService.filteredProducts.getValue();
+    } else {
+      this.productService.modifyFilteredProducts(this.productService.products);
+    }
   }
   onTypeCkeck(e: MouseEvent) {
     console.log(e);
@@ -63,7 +73,7 @@ export class FilterComponent implements OnInit {
       this.selectedTypes?.splice(i, 1);
     }
     this.filterProducts();
-    console.log('filterd', this.productService.filteredProducts);
+    console.log('filterd', this.productService.filteredProducts.getValue());
   }
   onSizeCkeck(e: MouseEvent) {
     console.log(e);

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Product } from 'src/app/_Models/product';
 import { tap } from 'rxjs/operators';
 
@@ -16,10 +16,13 @@ export class ProductService {
       tap((products) => {
         console.log('prs', products);
         this.products = products;
-        this.filteredProducts = products;
-        return products;
+        this.filteredProducts.next(products);
+        return this.products;
       })
     );
+  }
+  getFilteredProducts(): Observable<Product[]> {
+    return this.filteredProducts.asObservable();
   }
   getByID(id: number) {
     const product = this.products.find((p) => p.id === id);
@@ -28,5 +31,9 @@ export class ProductService {
   }
 
   shoppingItems: Product[] = [];
-  filteredProducts: Product[] = this.products;
+  filteredProducts = new BehaviorSubject<Product[]>(this.products);
+
+  modifyFilteredProducts(newFilteredProducts: Product[]) {
+    this.filteredProducts.next(newFilteredProducts);
+  }
 }
