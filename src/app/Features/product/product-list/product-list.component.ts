@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Product } from 'src/app/_Models/product';
 import { ProductService } from './../product.service';
+import { TypesService } from './../../types/types.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnChanges {
   products: Product[] = [];
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private typesService: TypesService
+  ) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('select types', this.typesService.selectedTypes);
+  }
 
   ngOnInit(): void {
     if (!this.products.length) {
@@ -17,6 +24,7 @@ export class ProductListComponent implements OnInit {
         this.products = products;
       });
       console.log('products', this.products);
+      console.log('types', this.typesService.selectedTypes);
     }
   }
 }

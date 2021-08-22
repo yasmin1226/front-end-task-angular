@@ -1,5 +1,7 @@
 import { Type } from './type';
 import { Catogrie } from './catogrie';
+import { Size } from './size';
+import { Color } from './color';
 
 export interface Product {
   id?: number;
@@ -10,8 +12,8 @@ export interface Product {
   discount?: number;
 
   catogrie?: Catogrie;
-  colors?: String[];
-  sizes?: number[];
+  colors?: Color[];
+  sizes?: Size[];
   description?: string;
   type?: Type;
 }

@@ -8,6 +8,7 @@ import { Type } from '../../_Models/type';
 })
 export class TypesService {
   types: Type[] = [];
+  selectedTypes: Type[] = [];
   getAll(): Observable<Type[]> {
     return this.http.get<Type[]>('http://localhost:3000/types').pipe(
       tap((types) => {
@@ -17,6 +18,9 @@ export class TypesService {
       })
     );
   }
-
+  getById(id: number) {
+    const type = this.types.find((t) => (t.id = id));
+    console.log('type', type);
+  }
   constructor(private http: HttpClient) {}
 }

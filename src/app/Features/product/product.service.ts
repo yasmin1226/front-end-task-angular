@@ -14,13 +14,16 @@ export class ProductService {
   getAll(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:3000/products').pipe(
       tap((products) => {
+        console.log('prs', products);
         this.products = products;
         return products;
       })
     );
   }
   getByID(id: number) {
-    return this.products.find((p) => (p.id = id));
+    const product = this.products.find((p) => p.id === id);
+    console.log('product', product);
+    return product;
   }
 
   shoppingItems: Product[] = [];

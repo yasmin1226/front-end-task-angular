@@ -234,3 +234,6 @@ hr {
 .open {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
