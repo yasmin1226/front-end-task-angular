@@ -40,9 +40,9 @@ export class FilterComponent implements OnInit {
   isOpened = false;
   isColorOpened = true;
   filterProducts() {
+    let newProducts: Product[] = [];
     if (this.selectedTypes.length > 0) {
       let filteredProducts = this.productService.products;
-      let newProducts: Product[] = [];
       this.selectedTypes.map((t) => {
         console.log('all prods', filteredProducts);
         console.log('triggered');
@@ -58,6 +58,20 @@ export class FilterComponent implements OnInit {
     } else {
       this.productService.modifyFilteredProducts(this.productService.products);
     }
+    // if (this.sizesSelected.length > 0) {
+    //   this.sizesSelected.map((s) => {
+    //     newProducts.map((p) => {
+    //       if (p?.sizes?.length) {
+    //         p.sizes.map((ps) => {
+    //           if (ps.id == s.id) {
+    //             // newProducts.push(p);
+    //           }
+    //         });
+    //       }
+    //     });
+    //   });
+    //   //  this.productService.modifyFilteredProducts(newProducts);
+    // }
   }
   onTypeCkeck(e: MouseEvent) {
     console.log(e);
@@ -89,5 +103,6 @@ export class FilterComponent implements OnInit {
       this.sizesSelected?.splice(i, 1);
     }
     console.log(this.sizesSelected);
+    this.filterProducts();
   }
 }

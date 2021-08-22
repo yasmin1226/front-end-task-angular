@@ -8,9 +8,10 @@
       "price": 900,
 
       "colors": ["red", "blue"],
-      "sizes": [36, 42],
+
       "imageUrls": ["1.jpg"],
-      "type": { "id": 1 }
+      "type": { "id": 1 },
+      "sizes": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]
     },
     {
       "id": 2,
@@ -21,9 +22,10 @@
       "discount": 20,
 
       "colors": ["red", "blue"],
-      "sizes": [36, 42],
+
       "imageUrls": ["1.jpg"],
-      "type": { "id": 2 }
+      "type": { "id": 2 },
+      "sizes": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]
     },
     {
       "id": 3,
@@ -34,9 +36,10 @@
       "discount": 20,
 
       "colors": ["red", "blue"],
-      "sizes": [36, 42],
+
       "imageUrls": ["1.jpg"],
-      "type": { "id": 3 }
+      "type": { "id": 3 },
+      "sizes": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]
     },
     {
       "id": 4,
@@ -45,9 +48,10 @@
       "price": 900,
       "discount": 20,
       "colors": ["red", "blue"],
-      "sizes": [36, 42],
+
       "imageUrls": ["1.jpg"],
-      "type": { "id": 1 }
+      "type": { "id": 1 },
+      "sizes": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]
     },
     {
       "id": 5,
@@ -57,9 +61,10 @@
       "price": 900,
 
       "colors": ["red", "blue"],
-      "sizes": [36, 42],
+
       "imageUrls": ["1.jpg"],
-      "type": { "id": 2 }
+      "type": { "id": 2 },
+      "sizes": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]
     }
   ],
   "types": [
